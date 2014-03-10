@@ -1,8 +1,6 @@
-<h1>Nothing You Have To Say Is Important</h1>
-<h2>But it looks like you're gonna write it anyway, so, thanks for that.</h2>
-
-
-<%= form_for :post, url: posts_path do |f| %>
+<h1>Post Not Perfect?  Big Surprise, Huh.  Try And Make It Not Suck So Much.</h1>
+ 
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
   <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited
@@ -28,5 +26,5 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<%= link_to 'Or You Could Give Up And Navigate Home!', posts_path %>
+ 
+<%= link_to 'Back', posts_path %>
